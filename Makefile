@@ -16,9 +16,9 @@ GIT_TREE_STATE=$(shell if [[ -z "`git status --porcelain`" ]]; then echo "clean"
 EXECUTABLES = curl docker gzip go
 
 #  docker image publishing options
-DOCKER_PUSH?=false
-IMAGE_NAMESPACE?=quay.io/argoproj
-VERSION?=latest
+DOCKER_PUSH?=true
+IMAGE_NAMESPACE?=474589087003.dkr.ecr.us-west-2.amazonaws.com/cd
+VERSION?=1.9.6-test2
 BASE_VERSION:=latest
 
 override LDFLAGS += \

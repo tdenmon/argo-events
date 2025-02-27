@@ -96,7 +96,7 @@ func (router *Router) HandleRoute(writer http.ResponseWriter, request *http.Requ
 	}
 
 	logger.Debugf("event-payload: %s", body)
-
+	// test
 	event := &events.GitLabEventData{
 		Headers:  request.Header,
 		Body:     (*json.RawMessage)(&body),
