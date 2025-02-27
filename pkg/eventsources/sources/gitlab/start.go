@@ -102,8 +102,10 @@ func (router *Router) HandleRoute(writer http.ResponseWriter, request *http.Requ
 	}
 
 	eventBody, err := json.Marshal(event)
+	logger.Debugf("event: %s", event)
 	if err != nil {
 		logger.Info("failed to marshal event")
+		logger.Debugf("err: %s", err)
 		sharedutil.SendErrorResponse(writer, "invalid event")
 		route.Metrics.EventProcessingFailed(route.EventSourceName, route.EventName)
 		return
